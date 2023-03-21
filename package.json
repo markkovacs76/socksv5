@@ -1,4 +1,4 @@
-{ "name": "socksv5",
+{ "name": "@markkovacs76/socksv5",
   "version": "0.0.6",
   "author": "Brian White <mscdex@mscdex.net>",
   "description": "SOCKS protocol version 5 server and client implementations for node.js",

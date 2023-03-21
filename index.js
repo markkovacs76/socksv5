@@ -8,8 +8,11 @@ var fs = require('fs'),
     exports[keys[i]] = exp[keys[i]];
 });
 
-exports.auth = {};
+/* using static requires instead of fs.readdirSync,
+ * because webpack throws error by using dynamic imports 
+ */
 
-fs.readdirSync(__dirname + '/lib/auth').forEach(function(f) {
-  exports.auth[path.basename(f, '.js')] = require(__dirname + '/lib/auth/' + f);
-});
+exports.auth = {
+  None: require(__dirname + '/lib/auth/None'),
+  UserPassword: require(__dirname + '/lib/auth/UserPassword')
+};
